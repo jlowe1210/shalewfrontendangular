@@ -1,0 +1,159 @@
+<ng-container>
+  <div [ngStyle]="{ 'text-align': 'center', margin: '5px 0' }">
+    <img
+      class="logo"
+      width="100px"
+      height="100px"
+      src="https://static.wixstatic.com/media/6c0ded_c03c71aab7c6413ea2e853cdfe5d262f~mv2.png/v1/fill/w_120,h_120,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/8CA60775-1D18-4A01-8B4C-39A6D18AE04B__PNG.png"
+    />
+  </div>
+  <nav class="navbar">
+    <container>
+      <ul class="navbar_link_container">
+        <div class="desktop_nav">
+          <li>
+            <a
+              class="links"
+              routerLink="/"
+              routerLinkActive="route_active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/about"
+              routerLinkActive="route_active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/contact"
+              routerLinkActive="route_active"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/weddings"
+              routerLinkActive="route_active"
+              >Weddings</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/birthdays"
+              routerLinkActive="route_active"
+              >Birthdays</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/kidevents"
+              routerLinkActive="route_active"
+              >Kid events</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/babyshowers"
+              routerLinkActive="route_active"
+              >Baby showers</a
+            >
+          </li>
+          <li>
+            <a
+              class="links"
+              routerLink="/sweet16"
+              routerLinkActive="route_active"
+              >Sweet 16</a
+            >
+          </li>
+        </div>
+      </ul>
+    </container>
+    <div class="mobile_nav_menu_container">
+      <p (click)="setMobileToggle(true)" class="mobile_menu_btn">
+        Menu
+        <img
+          class="hamburgericon"
+          src="../../../assets/images/hamburgerIcon.png"
+          alt="hamgurger icon"
+        />
+      </p>
+    </div>
+    <div *ngIf="mobileNavToggle$ | async" class="mobile_nav_container">
+      <p (click)="setMobileToggle(false)" class="close_btn">X</p>
+      <ul class="mobile_nav">
+        <li>
+          <a
+            class="links"
+            routerLink="/"
+            routerLinkActive="route_active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="links"
+            routerLink="/about"
+            routerLinkActive="route_active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >About</a
+          >
+        </li>
+        <li>
+          <a class="links" routerLink="/contact" routerLinkActive="route_active"
+            >Contact</a
+          >
+        </li>
+        <li>
+          <a
+            class="links"
+            routerLink="/weddings"
+            routerLinkActive="route_active"
+            >Weddings</a
+          >
+        </li>
+        <li>
+          <a
+            class="links"
+            routerLink="/birthdays"
+            routerLinkActive="route_active"
+            >Birthdays</a
+          >
+        </li>
+        <li>
+          <a
+            class="links"
+            routerLink="/kidevents"
+            routerLinkActive="route_active"
+            >Kid events</a
+          >
+        </li>
+        <li>
+          <a
+            class="links"
+            routerLink="/babyshowers"
+            routerLinkActive="route_active"
+            >Baby showers</a
+          >
+        </li>
+        <li>
+          <a class="links" routerLink="/sweet16" routerLinkActive="route_active"
+            >Sweet 16</a
+          >
+        </li>
+      </ul>
+    </div>
+  </nav>
+</ng-container>

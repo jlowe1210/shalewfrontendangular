@@ -1,0 +1,31 @@
+.testimonial_section {
+  width: 100%;
+
+  background-color: #faddec;
+}
+
+@media only screen and (max-width: 700px) {
+  .testimonial_container {
+    flex-flow: column;
+  }
+  .testimonial {
+    align-self: auto !important;
+  }
+}
+
+.testimonial_container {
+  padding: 15px 0;
+  display: flex;
+  font-style: italic;
+  justify-content: space-between;
+  align-items: center;
+
+  text-align: center;
+}
+
+.testimonial {
+  align-self: baseline;
+  width: 350px;
+  font-size: 25px;
+  padding: 0 15px;
+}

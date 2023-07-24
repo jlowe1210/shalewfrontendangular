@@ -1,0 +1,48 @@
+<ng-container>
+  <div class="section">
+    <div class="section_overlay"></div>
+    <div class="section_tagline_container">
+      <div>
+        <h4
+          [ngStyle]="{
+            'font-weight': 'bold',
+            'font-size': '40px',
+            'margin-bottom': '20px'
+          }"
+        >
+          Welcome to...
+        </h4>
+        <h1 class="section_tagline_header anim">
+          <span [ngStyle]="{ color: '#f1a3cb' }">S</span>ha<span
+            [ngStyle]="{ color: '#f1a3cb' }"
+            >l</span
+          >ew <span [ngStyle]="{ color: '#f1a3cb' }">E</span>vents
+        </h1>
+        <h2
+          [ngStyle]="{ 'animation-delay': '0.7s' }"
+          class="section_tagline_sub_header anim"
+        >
+          <span [ngStyle]="{ color: '#F1A3CB' }">E</span>legance
+          <span [ngStyle]="{ color: '#F1A3CB' }">E</span>levates
+          <span [ngStyle]="{ color: '#F1A3CB' }">E</span>very
+          <span [ngStyle]="{ color: '#F1A3CB' }">E</span>vent
+        </h2>
+      </div>
+    </div>
+    <video
+      #video
+      playsInline
+      muted
+      loop
+      webkit-playsinline="true"
+      [ngStyle]="{
+        width: '100%',
+        'object-fit': 'cover',
+        height: '70vh',
+        overflow: 'hidden'
+      }"
+    >
+      <source type="video/mp4" src="../../../assets/videos/vi.mp4" />
+    </video>
+  </div>
+</ng-container>

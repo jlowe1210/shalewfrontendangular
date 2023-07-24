@@ -1,0 +1,121 @@
+<form class="form" [formGroup]="contactForm" (ngSubmit)="handleSubmit()">
+  <div
+    [ngStyle]="{
+      'text-align': 'center',
+      'font-size': '35px',
+      color: 'lightgreen'
+    }"
+    *ngIf="messageStatus === getMessageEmun().success"
+  >
+    Message sent!
+  </div>
+  <div
+    [ngStyle]="{
+      'text-align': 'center',
+      'font-size': '35px',
+      color: 'red'
+    }"
+    *ngIf="messageStatus === getMessageEmun().failed"
+  >
+    Unable to send messsage
+  </div>
+  <label class="label">Name *</label>
+  <span class="error" *ngIf="name?.errors && name?.dirty"
+    >Name is required</span
+  >
+  <input
+    name="name"
+    placeholder="Enter your name*"
+    type="text"
+    formControlName="name"
+  />
+  <label>Address</label>
+  <input
+    type="text"
+    name="address"
+    placeholder="Enter your address"
+    formControlName="address"
+  />
+  <div class="contact_group">
+    <div class="contact_group_input_container">
+      <label>Email*</label>
+      <span class="error" *ngIf="email?.errors && email?.dirty"
+        >Please enter a valid email address</span
+      >
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email*"
+        formControlName="email"
+      />
+    </div>
+    <div class="contact_group_input_container">
+      <label>Phone number</label>
+      <span class="error" *ngIf="phone?.errors"
+        >Please enter a valid phone number</span
+      >
+      <input
+        type="tel"
+        placeholder="Enter a phone number"
+        name="phone"
+        formControlName="phone"
+      />
+    </div>
+  </div>
+  <select name="contact" formControlName="contact_method">
+    <option selected value="">Preferred of contact</option>
+    <option value="Call">Call</option>
+    <option value="Text">Text</option>
+    <option value="Email">Email</option>
+  </select>
+  <div
+    *ngIf="contact_method.value === 'Call' || contact_method.value === 'Text'"
+    class="contact_group_date_time"
+  >
+    <label>Time to call or text*</label>
+
+    <span class="error" *ngIf="date_time?.errors"
+      >Please enter a valid phone number</span
+    >
+    <input
+      name="date_time"
+      type="datetime-local"
+      [min]="disablePastDates"
+      formControlName="date_time"
+    />
+  </div>
+  <label>Subject</label>
+  <input
+    placeholder="Enter the subject"
+    name="subject"
+    formControlName="subject"
+  />
+  <label>Message</label>
+  <textarea
+    placeholder="Enter your message"
+    class="form_textbox"
+    formControlName="message"
+  ></textarea>
+  <button
+    [disabled]="
+      !contactForm.valid || messageStatus === getMessageEmun().submitting
+    "
+    type="submit"
+    [ngStyle]="{
+      cursor:
+        !contactForm.valid || messageStatus === getMessageEmun().submitting
+          ? 'not-allowed'
+          : 'pointer',
+      'background-color':
+        !contactForm.valid || messageStatus === getMessageEmun().submitting
+          ? 'gray'
+          : '',
+
+      'font-size': '20px'
+    }"
+  >
+    {{
+      messageStatus === getMessageEmun().submitting ? "submitting" : "Submit"
+    }}
+  </button>
+</form>

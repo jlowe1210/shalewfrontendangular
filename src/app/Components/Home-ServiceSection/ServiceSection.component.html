@@ -1,0 +1,27 @@
+<div class="services_section">
+  <h1>Event Services</h1>
+  <container>
+    <div class="services_section_container">
+      <div
+        class="services_section_container_item"
+        *ngFor="let link of eventsLinks"
+      >
+        <h1>{{ link.header }}</h1>
+        <div class="image_container">
+          <img loading="lazy" [alt]="link.alt" [src]="link.src" />
+        </div>
+        <a
+          [ngStyle]="{
+            'text-decoration': 'none',
+            'font-size': '30px',
+            'margin-top': '5px',
+            display: 'inline-block',
+            color: '#F1A2CA'
+          }"
+          [routerLink]="[link.path]"
+          >View</a
+        >
+      </div>
+    </div>
+  </container>
+</div>

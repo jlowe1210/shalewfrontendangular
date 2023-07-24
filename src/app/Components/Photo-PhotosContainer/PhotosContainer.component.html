@@ -1,0 +1,11 @@
+<container>
+  <div *ngIf="photosError | async; else photosDisplay">
+    <h1>Unable to get photos</h1>
+  </div>
+
+  <ng-template #photosDisplay>
+    <div class="photos_container">
+      <photo *ngFor="let photo of photos" [photo]="photo"></photo>
+    </div>
+  </ng-template>
+</container>

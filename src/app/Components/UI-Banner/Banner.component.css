@@ -1,0 +1,10 @@
+.banner_container {
+  width: 100%;
+  height: 200px;
+  background-color: #faddec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-size: 30px;
+}

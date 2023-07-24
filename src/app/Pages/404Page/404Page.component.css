@@ -1,0 +1,10 @@
+.container404 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+}
+
+.container404 h1 {
+  font-size: 40px;
+}
